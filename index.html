@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Responsive Webpage</title>
+    <style>
+      /* Define the grid container */
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 10px;
+      }
+      
+      /* Define the grid items */
+      .grid-item {
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+      }
+      
+      /* Media query for screens smaller than 600px */
+      @media (max-width: 600px) {
+        .grid-container {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-item">Item 1</div>
+      <div class="grid-item">Item 2</div>
+      <div class="grid-item">
+        <div id="countdown"></div>
+      </div>
+      <div class="grid-item">Item 4</div>
+    </div>
+    <script>
+      // Set the target date for the countdown
+      var targetDate = new Date("August 1, 2023 00:00:00");
+      var countdown = document.getElementById("countdown");
+      
+      // Update the countdown every second
+      setInterval(function() {
+        var currentDate = new Date();
+        var secondsLeft = (targetDate - currentDate) / 1000;
+        
+        // Calculate the days, hours, minutes and seconds
+        var days = parseInt(secondsLeft / 86400);
+        secondsLeft = secondsLeft % 86400;
+        var hours = parseInt(secondsLeft / 3600);
+        secondsLeft = secondsLeft % 3600;
+        var minutes = parseInt(secondsLeft / 60);
+        var seconds = parseInt(secondsLeft % 60);
+        
+        // Update the countdown element
+        countdown.innerHTML = days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds left until August 1, 2023.";
+      }, 1000);
+    </script>
+  </body>
+</html>
