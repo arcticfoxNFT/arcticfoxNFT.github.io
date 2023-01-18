@@ -40,8 +40,8 @@
   <body>
 <div class="jumbotron text-center">
           <h1>Arctic Foxes</h1>
-          <p>Launching late 2023</p> 
-          <div id="countdown"></div>
+          <p>Get your fox </p> 
+          <input type="button" class="btn btn-primary" value="Connect Wallet" onclick="connect();">
 </div>
 <!--     <div class="grid-container">
       <div class="grid-item">
@@ -72,4 +72,26 @@
         countdown.innerHTML = days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds left until August 1, 2023.";
       }, 1000);
     </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js"></script>
+  </head>
+ <body>
+ <script>
+ /* To connect using MetaMask */
+ async function connect() {
+   if (window.ethereum) {
+      await window.ethereum.request({ method: "eth_requestAccounts" });
+      window.web3 = new Web3(window.ethereum);
+      const account = web3.eth.accounts;
+      //Get the current MetaMask selected/active wallet
+      const walletAddress = account.givenProvider.selectedAddress;
+      console.log(`Wallet: ${walletAddress}`);
+   
+   } else {
+    console.log("No wallet");
+   }
+ }
+ </script>
+ 
+
+  </body>
 </html>
