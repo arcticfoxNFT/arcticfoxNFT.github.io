@@ -9,11 +9,21 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lilita+One">
             <style>
                 /* Define the grid container */
-                .jumbotron {
-                  padding-top: 20%;
-                  padding-bottom: 20%;
+                .h1 {
+                  font-family: 'Lilita+One';
+                  text-decoration-color: #ccc;
+                }
+                .h2 {
+                  text-decoration-color: #ccc;
+                }
+                body {
+                  background-color: black;
+                }
+                .twitter {
+                  padding-top: 80px;
                 }
                 .grid-container {
                   display: grid;
@@ -38,10 +48,15 @@
               </style>
           </head>
   <body>
-<div class="jumbotron text-center">
-          <h1>Arctic Foxes</h1>
-          <h2><div id="countdown"></div></h2>
-          
+<div class="jumbotron text-center" style="background-image: url(banner.png); background-size: 100%; background-repeat: no-repeat; background-color: black; padding-top: 20%; padding-bottom: 10%">
+</div>
+<div class="jumbotron text-center" style="background-color: black; padding-top: 0%">
+  <h1 style="font-family: 'Lilita+One'; color: #fff;">Arctic Foxes</h1>
+  <h2 style="color: #fff;"><div id="countdown"></div></h2>
+  <a href="https://twitter.com/AFoxesNFT">
+   <div class="twitter"><img src="Twitter.svg" style="height:25px;" url(banner.png); alt="Twitter Logo"></div> 
+  </a>
+  
 </div>
 <!--     <div class="grid-container">
       <div class="grid-item">
@@ -69,7 +84,7 @@
         var seconds = parseInt(secondsLeft % 60);
         
         // Update the countdown element
-        countdown.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s left until mint";
+        countdown.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s until mint";
       }, 1000);
     </script>
 </html>
